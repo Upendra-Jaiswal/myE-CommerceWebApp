@@ -1,3 +1,5 @@
+/* styles.css */
+
 .footer {
   display: flex;
   padding: 20px;
@@ -9,82 +11,67 @@
 .left-section,
 .right-section,
 .third-section {
-  flex-basis: 50%;
+  flex-basis: 100%; /* Initially, each section occupies the full width */
   box-sizing: border-box;
 }
 
+/* Media Query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  .left-section,
+  .right-section,
+  .third-section {
+    flex-basis: 100%; /* On smaller screens, each section takes up the full width */
+  }
+
+  .third-section {
+    margin-top: 20px; /* Reduce the top margin on smaller screens */
+  }
+}
+
+/* Media Query for screens with a minimum width of 769px and a maximum width of 1200px */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .left-section,
+  .right-section {
+    flex-basis: 50%; /* On medium-sized screens, each section takes up 50% of the width */
+  }
+
+  .third-section {
+    flex-basis: 100%; /* On medium-sized screens, the third section takes up the full width */
+    margin-top: 20px; /* Reduce the top margin on medium-sized screens */
+  }
+}
+
+/* Common styles for all sections */
 .left-section,
-.right-section {
-  flex-grow: 1;
-  flex-shrink: 1;
-}
+.right-section,
 .third-section {
-  margin-top: 50px;
-  flex-grow: 2;
-  flex-shrink: 2;
-}
-
-.left-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Align items to the left */
   gap: 20px; /* Add a gap of 20px between each item */
+  align-items: center; /* Align items to the center on all screen sizes */
 }
 
-.right-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the right */
-  gap: 20px; /* Add a gap of 20px between each item */
-}
-
-.contactus {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Align items to the right */
-  gap: 20px; /* Add a gap of 20px between each item */
-}
-
-.download-app {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Align items to the right */
-  gap: 20px; /* Add a gap of 20px between each item */
-}
-
+/* Specific styles for the contactus and download-app sections */
+.contactus p,
 .download-app p {
   font-weight: bold;
-  align-items: center;
+  text-align: center; /* Center the text within these sections */
 }
 
-.contactus p {
-  font-weight: bold;
-  align-items: center;
-}
-
-.social-links {
-  display: flex;
-
-  gap: 20px; /* Add a gap of 20px between each icon */
-}
-
+/* Specific styles for the social-links and app-links sections */
+.social-links,
 .app-links {
   display: flex;
-  gap: 20px; /* Add a gap of 20px between each logo */
+  justify-content: center; /* Center the icons or logos */
+  gap: 20px; /* Add a gap of 20px between each item */
 }
 
 .social-links a {
   text-decoration: none;
   color: #333;
   font-size: 20px;
-  margin: 0 10px;
 }
 
 .app-links img {
   width: 80px;
-  margin: 0 10px;
-}
-
-.social-links a:hover {
-  opacity: 0.8;
 }
