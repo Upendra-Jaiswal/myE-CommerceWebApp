@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/cart.css";
+import correctimage from "./photos/correct.png"
 
 const Cart = ({
   onClose,
@@ -63,7 +64,7 @@ const Cart = ({
             </div>
             <div>
               {orderPlaced ? (
-                "order is placed"
+             <div className="order-placed-text" > Your order is placed <img src={correctimage} className="correct-image" alt="Order Placed" /></div>
               ) : (
                 <button onClick={placeOrder} className="Button Place-Order">
                   Place Order

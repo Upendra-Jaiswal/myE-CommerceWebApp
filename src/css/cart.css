@@ -1,22 +1,25 @@
+/* styles.css */
+
+/* Common styles for cart elements */
 .cart {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
 .cart-icon {
   margin-bottom: 20px;
   margin-top: 20px;
-  color:black;
+  color: black;
 }
-.item-container {
- 
 
+.item-container {
   list-style: none; /* Remove default list styles */
   display: flex;
   align-items: center; /* Vertically align the items */
   justify-content: space-between; /* Add space between the elements */
   padding: 10px; /* Add padding around the entire item */
-  margin-right: 30%;
-  margin-left: 30%;
+  margin: 0 auto; /* Center the item container */
+  max-width: 600px; /* Limit the maximum width of the item container */
 }
 
 .item-name,
@@ -24,16 +27,21 @@
 .remove-item {
   display: inline-block;
   width: 33.33%;
-
   margin-right: 10px; /* Add right margin to create space between name and price */
 }
+
 .close-button-container {
   margin-top: 10px;
 }
-
-ul {
-  list-style: none; /* Remove default list styles */
+.order-placed-text {
+  font-weight: bold;
 }
+
+.correct-image{
+    width: 20px;
+    height: 20px;
+}
+/* Common styles for buttons */
 .Button {
   border: none;
   color: black;
@@ -46,26 +54,28 @@ ul {
   border-radius: 10px;
 }
 
+/* Specific styles for the "Place Order" button */
 .Place-Order {
   background-color: #5da85b; /* Green */
-  font-size: 16px; 
+  font-size: 16px;
   padding: 14px 40px;
 }
 
+/* Specific styles for the "Remove" button */
 .Remove-Button {
   background-color: #63bfc9; /* Green */
-
   padding: 12px 28px;
 }
 
+/* Specific styles for the "Close" button */
 .Close-Button {
   background-color: #73a9d9; /* Green */
-  font-size: 15px; 
+  font-size: 15px;
   padding: 12px 28px;
- 
   border: black;
 }
 
+/* Button hover styles */
 .Remove-Button:hover {
   background-color: #14b8c9; /* Change the background color on hover */
   color: #fff; /* Change the text color on hover to make it more visible */
@@ -79,4 +89,31 @@ ul {
 .Close-Button:hover {
   background-color: #0b76d4; /* Change the background color on hover */
   color: #fff; /* Change the text color on hover to make it more visible */
+}
+ul {
+  list-style: none; /* Remove default list styles */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 600px) {
+  .item-container {
+    flex-direction: column; /* Stack items on top of each other on smaller screens */
+  }
+
+  .item-name,
+  .item-price,
+  .remove-item {
+    width: 100%; /* Take up full width on smaller screens */
+    margin-right: 0; /* Remove the right margin on smaller screens */
+    margin-bottom: 10px; /* Add some spacing between items on smaller screens */
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  .Place-Order,
+  .Remove-Button {
+    align-items: center;
+    margin-right: 0; /* Remove the right margin on smaller screens */
+    margin-bottom: 10px; /* Add some spacing between items on smaller screens */
+  }
 }

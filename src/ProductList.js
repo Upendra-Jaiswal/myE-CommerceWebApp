@@ -11,6 +11,7 @@ import product7 from "./photos/keshkingShampoo.jpg";
 import product8 from "./photos/tryones.jpeg";
 import Cart from "./Cart";
 import "./css/cart.css";
+import "./css/productlist.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -164,20 +165,47 @@ const ProductList = () => {
           />
         )}
       </nav>
-      <div style={{ display: "flex" }}>
-        <div style={{ flex: "20%", marginRight: "20px" }}>
-          <Filters handleSort={handleSort} sortBy={sortBy} />
-        </div>
-        <div style={{ flex: "80%" }}>
-          <div>
-            <div>
-              <Products products={products} addToCart={addToCart} />
-            </div>
-          </div>
+      <div class="flex-container">
+    <div class="left-column">
+      <Filters handleSort={handleSort} sortBy={sortBy} />
+    </div>
+    <div class="right-column">
+      <div>
+        <div>
+          <Products products={products} addToCart={addToCart} />
         </div>
       </div>
+    </div>
+  </div>
     </div>
   );
 };
 
 export default ProductList;
+
+
+// <div className="product-list-container">
+// <div className="product-list-filters">
+//   <Filters handleSort={handleSort} sortBy={sortBy} />
+// </div>
+// <div className="product-list-products">
+// {/* <div   style={{ flex: "80%" }}> */}
+//   <div>
+//     <div>
+//       <Products products={products} addToCart={addToCart} />
+//     </div>
+//   </div>
+// </div>
+// </div>
+
+// {/* <div style={{ display: "flex" }}>
+// <div style={{ flex: "20%", marginRight: "20px" }}>
+//   <Filters handleSort={handleSort} sortBy={sortBy} />
+// </div>
+// <div style={{ flex: "80%" }}>
+//   <div>
+//     <div>
+//       <Products products={products} addToCart={addToCart} />
+//     </div>
+//   </div>
+// </div> */}

@@ -1,0 +1,54 @@
+/* .product-list-container {
+  display: "flex";
+}
+
+.product-list-filters {
+    flex: 0 0 20%; /* Flex properties for the filters section */
+/* margin-right: 20px;
+  }
+
+  .product-list-products{}  */
+
+/* styles.css */
+
+/* Styles for the outer div */
+.flex-container {
+  display: flex;
+}
+
+/* Styles for the left column */
+.left-column {
+  flex: 20%;
+  margin-right: 20px;
+}
+
+/* Styles for the right column */
+.right-column {
+  flex: 80%;
+}
+
+/* Optional styles for nested divs (you can add more styles as needed) */
+.nested-div {
+  /* Add any styles specific to the nested divs here */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* Stack columns on top of each other */
+  }
+
+  .left-column,
+  .right-column {
+    flex: 100%; /* Take up full width on smaller screens */
+    max-width: 100%;
+  }
+
+  .left-column {
+    margin-right: 0; /* Remove the margin on smaller screens */
+    margin-bottom: 10px;
+  }
+  .right-column {
+    margin-left: 20px;
+  }
+}
