@@ -9,6 +9,9 @@ const Cart = ({
   removeAll,
   placeOrder,
   orderPlaced,
+  emptyCart,
+  setEmptyCart,
+  setOrderPlaced
 }) => {
   const calculateTotalPrice = () => {
     return cartItems.reduce((total, item) => {
@@ -47,37 +50,75 @@ const Cart = ({
             </ul>
           </div>
           <div>
-            <p> Total price : ${calculateTotalPrice().toFixed(2)} </p>
+            <div>
+              <div>
+                <p>
+                  {" "}
+                  {orderPlaced ? (
+                    ""
+                  ) : (
+                    <p> Total price : ${calculateTotalPrice().toFixed(2)} </p>
+                  )}
+                </p>
+              </div>
+              <div>
+                {orderPlaced ? (
+                  <div className="order-placed-text">
+                    {" "}
+                    Your order is placed{" "}
+                    <img
+                      src={correctimage}
+                      className="correct-image"
+                      alt="Order Placed"
+                    />
+                  </div>
+                ) : (
+                  <button onClick={placeOrder} className="Button Place-Order">
+                    Place Order
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
-          <div></div>
         </div>
       )}
 
-      <div>
-        {orderPlaced ? (
-          <div className="order-placed-text">
-            {" "}
-            Your order is placed{" "}
-            <img
-              src={correctimage}
-              className="correct-image"
-              alt="Order Placed"
-            />
-          </div>
+      {/* <div>
+        {" "}
+        {setEmptyCart ? (
+          ""
         ) : (
           <div>
-            {!(cartItems.length === 0) ? (
-              <div>
+            <div>
+              <p>
+                {" "}
+                {orderPlaced ? (
+                  ""
+                ) : (
+                  <p> Total price : ${calculateTotalPrice().toFixed(2)} </p>
+                )}
+              </p>
+            </div>
+            <div>
+              {orderPlaced ? (
+                <div className="order-placed-text">
+                  {" "}
+                  Your order is placed{" "}
+                  <img
+                    src={correctimage}
+                    className="correct-image"
+                    alt="Order Placed"
+                  />
+                </div>
+              ) : (
                 <button onClick={placeOrder} className="Button Place-Order">
                   Place Order
                 </button>
-              </div>
-            ) : (
-              <div> </div>
-            )}
+              )}
+            </div>
           </div>
         )}
-      </div>
+      </div> */}
       <div className="close-button-container">
         <button onClick={onClose} className="Button Close-Button">
           Close

@@ -11,6 +11,7 @@ const Products = ({ products, onCardClick, addToCart }) => {
             product={product}
             onClick={() => onCardClick(product)}
             addToCart={addToCart}
+            
           />
         ))}
       </div>

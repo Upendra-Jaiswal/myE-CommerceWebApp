@@ -11,7 +11,7 @@ import product7 from "./photos/keshkingShampoo.jpg";
 import product8 from "./photos/tryones.jpeg";
 import Cart from "./Cart";
 import "./css/cart.css";
-import "./css/productlist.css"
+import "./css/productlist.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,7 +20,6 @@ const ProductList = () => {
 
   const [orderPlaced, setOrderPlaced] = useState(false);
 
-  const [emptyCart, setEmptyCart] = useState(true);
   const [sortBy, setSortBy] = useState(""); // State to track the sorting option
 
   const [showCart, setShowCart] = useState(false);
@@ -41,7 +40,6 @@ const ProductList = () => {
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
     setOrderPlaced(false);
-    setEmptyCart(false);
   };
 
   const removeFromCart = (productId) => {
@@ -146,6 +144,12 @@ const ProductList = () => {
     setProducts(sortedProducts);
   };
 
+  // if(cartItems.length === 0){
+  //   setEmptyCart(true);
+  // }else{
+  //   setEmptyCart(false);
+  // }
+
   return (
     <div>
       <nav className="navbar" style={{ color: "black" }}>
@@ -161,28 +165,26 @@ const ProductList = () => {
             removeFromCart={removeFromCart}
             placeOrder={placeOrder}
             orderPlaced={orderPlaced}
-            emptyCart={emptyCart}
           />
         )}
       </nav>
       <div class="flex-container">
-    <div class="left-column">
-      <Filters handleSort={handleSort} sortBy={sortBy} />
-    </div>
-    <div class="right-column">
-      <div>
-        <div>
-          <Products products={products} addToCart={addToCart} />
+        <div class="left-column">
+          <Filters handleSort={handleSort} sortBy={sortBy} />
+        </div>
+        <div class="right-column">
+          <div>
+            <div>
+              <Products products={products} addToCart={addToCart} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
     </div>
   );
 };
 
 export default ProductList;
-
 
 // <div className="product-list-container">
 // <div className="product-list-filters">
